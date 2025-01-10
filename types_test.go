@@ -7,7 +7,7 @@ import (
 
 func TestUserStringWith(t *testing.T) {
 	user := User{
-		ID:           0,
+		ID:           "0",
 		FirstName:    "Test",
 		LastName:     "Test",
 		UserName:     "",
@@ -22,7 +22,7 @@ func TestUserStringWith(t *testing.T) {
 
 func TestUserStringWithUserName(t *testing.T) {
 	user := User{
-		ID:           0,
+		ID:           "0",
 		FirstName:    "Test",
 		LastName:     "Test",
 		UserName:     "@test",

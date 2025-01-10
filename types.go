@@ -178,7 +178,7 @@ func (ch UpdatesChannel) Clear() {
 // User represents a de-im user or bot.
 type User struct {
 	// ID is a unique identifier for this user or bot
-	ID int64 `json:"id"`
+	ID string `json:"id"`
 	// IsBot true, if this user is a bot
 	//
 	// optional
