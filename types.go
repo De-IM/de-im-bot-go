@@ -818,19 +818,21 @@ func (e MessageEntity) IsTextLink() bool {
 type PhotoSize struct {
 	// FileID identifier for this file, which can be used to download or reuse
 	// the file
-	FileID string `json:"file_id"`
+	FileID string `json:"file_id,omitempty"`
 	// FileUniqueID is the unique identifier for this file, which is supposed to
 	// be the same over time and for different bots. Can't be used to download
 	// or reuse the file.
-	FileUniqueID string `json:"file_unique_id"`
+	FileUniqueID string `json:"file_unique_id,omitempty"`
 	// Width photo width
-	Width int `json:"width"`
+	Width int `json:"width,omitempty"`
 	// Height photo height
-	Height int `json:"height"`
+	Height int `json:"height,omitempty"`
 	// FileSize file size
 	//
 	// optional
 	FileSize int `json:"file_size,omitempty"`
+
+	Url string `json:"url,omitempty"`
 }
 
 // Animation represents an animation file.
@@ -864,6 +866,8 @@ type Animation struct {
 	//
 	// optional
 	FileSize int `json:"file_size,omitempty"`
+
+	Url string `json:"url,omitempty"`
 }
 
 // Audio represents an audio file to be treated as music by the de-im clients.
@@ -901,6 +905,8 @@ type Audio struct {
 	//
 	// optional
 	Thumbnail *PhotoSize `json:"thumb,omitempty"`
+
+	Url string `json:"url,omitempty"`
 }
 
 // Document represents a general file.
@@ -928,6 +934,8 @@ type Document struct {
 	//
 	// optional
 	FileSize int `json:"file_size,omitempty"`
+
+	Url string `json:"url,omitempty"`
 }
 
 // Video represents a video file.
@@ -961,6 +969,8 @@ type Video struct {
 	//
 	// optional
 	FileSize int `json:"file_size,omitempty"`
+
+	Url string `json:"url,omitempty"`
 }
 
 // VideoNote object represents a video message.
@@ -1853,8 +1863,8 @@ type BotCommand struct {
 	// Description of the command, 3-256 characters.
 	Description string `json:"description"`
 
-	Type    string          `json:"type"` // 命令类型，值可为: chat、user、message。
-	Options []CommandOption `json:"options"`
+	Type    string          `json:"type,omitempty"` // 命令类型，值可为: chat、user、message。
+	Options []CommandOption `json:"options,omitempty"`
 }
 
 type CommandOption struct {
